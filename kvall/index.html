@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Beckmans Kvällskola Avtal</title>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="../style.css" />
+		<script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+		<script type="text/javascript" src="../app.js"></script>
+	</head>
+	<body>
+		<a class="print" onclick="window.print();return false;">Print</a>
+
+		<div>
+			<h1>Avtal om utbildning</h1>
+			<p>
+				Beckmans Akademi AB, hädanefter Beckmans Kvällsskola, bedriver
+				Kvällsskola inom Form, Modedesign och Visuell kommunikation.
+			</p>
+			<p>
+				För att Beckmans Kvällsskola ska kunna uppnå de mål som är formulerade i
+				utbildningsplanen krävs att Beckmans Kvällsskola anlitar externa
+				utbildare med specialistkunskaper inom respektive ämne.
+			</p>
+			<p>Utbildningarna ligger under Myndigheten för Yrkeshögskolan.</p>
+			<p>
+				Då Beckmans saknar nödvändiga egna resurser och specialistkompetenser
+				för att själv tillhandahålla föreskriven utbildning, avtalas härmed om
+				förvärv av utbildningstjänst från
+				<span class="contractor"></span>
+				.
+			</p>
+		</div>
+		<form>
+			<div>
+				<label for="program">Utbildningsprogram</label>
+				<input
+					type="text"
+					id="program"
+					placeholder="eg. Visuell Kommunikation"
+				/>
+			</div>
+			<!-- <div>
+				<label for="course">Kurs</label>
+				<input type="text" id="course" placeholder="eg. Rörlig Grafik och Bild" />
+			</div> -->
+			<!-- <div>
+				<label for="course-code">Kurskod</label>
+				<input type="text" id="course-code" placeholder="eg. VK17101" />
+			</div> -->
+			<div>
+				<label for="course-responsible">Kursansvarig</label>
+				<input
+					type="text"
+					id="course-responsible"
+					placeholder="Förnamn Efternamn"
+				/>
+			</div>
+			<!-- <div>
+				<label for="class">Klass</label>
+				<input type="text" id="class" placeholder="eg. VK20" />
+			</div> -->
+			<div>
+				<label for="contractor">Uppdragstagaren</label>
+				<input type="text" id="contractor" placeholder="Förnamn Efternamn" />
+			</div>
+			<div>
+				<label for="assignment-description">Uppdragsbeskrivning</label>
+				<textarea
+					type="text"
+					id="assignment-description"
+					rows="2"
+					wrap="hard"
+					placeholder="En kort uppdragsbeskrivning…"
+				></textarea>
+			</div>
+			<div>
+				<label for="assignment-date-start">Uppdragsdatum (start)</label>
+				<input type="date" id="assignment-date-start" data-date />
+			</div>
+			<div>
+				<label for="assignment-date-end">Uppdragsdatum (slut)</label>
+				<input type="date" id="assignment-date-end" data-date />
+			</div>
+			<div>
+				<label for="hourly-fee">Arvode per timme (SEK)</label>
+				<input type="number" id="hourly-fee" value="700" />
+			</div>
+			<div>
+				<label for="hours">Antal timmar</label>
+				<input type="number" id="hours" value="6" />
+			</div>
+			<div>
+				<label for="total">Total summa (SEK)</label>
+				<input type="number" id="total" value="" />
+			</div>
+			<div>
+				<label for="agreement-date">Avtalsdatum</label>
+				<input type="date" id="agreement-date" data-date />
+			</div>
+			<div>
+				<p>Önskar betalt som…</p>
+				<div style="display: grid; grid-template-columns: 1fr 1fr">
+					<div>
+						<label for="payment-lon">Lön</label>
+						<input type="radio" id="payment-lon" name="payment-type" />
+					</div>
+					<div>
+						<label for="payment-faktura">Fakturerar</label>
+						<input type="radio" id="payment-faktura" name="payment-type" />
+					</div>
+				</div>
+			</div>
+		</form>
+		<div>
+			<p>
+				<span class="contractor"></span>
+				innehar F-skattsedel, utför självständigt och under eget ansvar samtliga
+				delar som ingår i ovan nämnda utbildningsmoment, inklusive upplägg,
+				planering och framtagande av eventuellt kursmaterial. Observera att
+				<strong>undervisningen är momsbefriad</strong>
+				och detta ska framgå tydligt på eventuell faktura. Faktura-information
+				finns här
+				<a
+					href="https://avtal.beckmans.wiki/beckmans_fakturainformation_kvall.pdf"
+				>
+					https://avtal.beckmans.wiki/beckmans_fakturainformation_kvall.pdf
+				</a>
+				.
+			</p>
+			<p>
+				För mer information om hur vi behandlar dina personuppgifter hänvisar vi
+				till vår integritetsskyddspolicy
+				<a
+					href="https://static-beckmans.s3-eu-west-1.amazonaws.com/uploads/attachments/Policy_f%C3%B6r_behandling_av_personuppgifter.pdf"
+				>
+					https://www.beckmans.se/om-beckmans/policys/
+				</a>
+				.
+			</p>
+			<p>
+				Avbokning ska ske senast två månader innan kursstart vid eventuellt
+				förhinder.
+			</p>
+			<p>
+				Genom undertecknande av detta avtal garanterar gästläraren att hen är
+				införstådd och arbetar enligt Beckmans värdegrund som återspeglas i de
+				policys som återfinns
+				<a href="https://www.beckmans.se/om-beckmans/policys/">här</a>
+				.
+			</p>
+			<!-- <p>
+				<span class="contractor"></span>
+				innehar F-skattsedel.
+			</p>
+			<br /> -->
+			<p>
+				Stockholm den
+				<span class="agreement-date"></span>. Ovanstående har överenskommit
+				mellan
+			</p>
+			<br />
+			<br />
+			<div class="signature">
+				<p>
+					<span class="course-responsible"></span>
+					<br />
+					Kursansvarig
+				</p>
+				<p>
+					<span class="contractor"></span>
+					<br />
+					Uppdragstagaren
+				</p>
+			</div>
+		</div>
+	</body>
+</html>

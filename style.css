@@ -1,0 +1,138 @@
+@import url('https://rawgit.com/jonasjohansson/template/master/reset.css');
+
+:root {
+	--base: 16px;
+	--font-family: system-ui, -apple-system;
+	--font-size: 14px;
+	--input-width: 240px;
+}
+
+html,
+input,
+textarea {
+	font-family: var(--font-family);
+	font-size: var(--font-size);
+}
+
+body {
+	padding: var(--base);
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: underline;
+}
+
+label {
+	font-weight: bold;
+}
+
+h1 {
+	font-weight: normal;
+}
+
+p,
+h1 {
+	line-height: var(--base);
+}
+
+h1,
+body > *:not(:last-child),
+form div:not(:last-of-type),
+p:not(:last-child) {
+	margin-bottom: var(--base);
+}
+
+/* form */
+
+form {
+	padding: var(--base);
+	border: 1px solid black;
+}
+
+form div {
+	width: 100%;
+	display: inline-block;
+	box-sizing: border-box;
+	line-height: var(--base);
+}
+
+form label {
+	width: var(--input-width);
+	display: inline-block;
+	clear: both;
+	box-sizing: border-box;
+	font-weight: normal;
+}
+
+form label:after {
+	content: ':';
+}
+
+form input,
+form textarea {
+	width: calc(100% - var(--input-width));
+	float: right;
+	box-sizing: border-box;
+	border-bottom: 1px solid #ccc;
+}
+
+form input {
+	height: var(--base);
+}
+
+/* signature */
+
+.signature > p {
+	float: left;
+	width: 50%;
+}
+
+.signature:after {
+	clear: both;
+	display: block;
+	content: '';
+}
+
+/* print */
+
+.print {
+	display: block;
+	padding: 1rem;
+	border-radius: 1rem;
+	text-transform: uppercase;
+	text-align: center;
+	cursor: pointer;
+	background-color: rgb(0, 255, 0);
+	text-decoration: none;
+}
+
+/* media */
+
+@media screen {
+	:root {
+		--font-size: 18px;
+		--base: 24px;
+	}
+	span {
+		font-weight: bold;
+	}
+}
+
+@media print {
+	:root {
+		--input-width: 180px;
+	}
+	* {
+		color: black;
+	}
+	body {
+		width: 21cm;
+	}
+	span {
+		font-style: italic;
+	}
+	.print {
+		display: none;
+	}
+}
